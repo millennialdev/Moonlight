@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Moonlight | Parallax Scrolling Website</title>
+		<link rel="icon" type="image/x-icon" href="favicon.ico" />
+		<link rel="icon" type="image/png" href="favicon.png" />
+		<link rel="stylesheet" href="styles.css" />
+	</head>
+	<body>
+		<header>
+			<a href="#" class="logo">Logo</a>
+			<ul>
+				<li>
+					<a href="#" class="active">Home</a>
+					<a href="#">About</a>
+					<a href="#">Work</a>
+					<a href="#">Contact</a>
+				</li>
+			</ul>
+		</header>
+		<section>
+			<img src="stars.png" id="stars" />
+			<img src="moon.png" id="moon" />
+			<img src="mountains_behind.png" id="mountains_behind" />
+			<h2 id="text">Moon Light</h2>
+			<a href="#sec" id="btn">Explore</a>
+			<img src="mountains_front.png" id="mountains_front" />
+		</section>
+		<div class="sec" id="sec">
+			<h2>Parallax Scrolling Effects</h2>
+			<p>
+				Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore quod
+				recusandae quas laudantium modi aperiam! Obcaecati illo ut consequatur
+				hic!
+				<br />
+				<br />
+				<br />
+				Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus sunt,
+				voluptates commodi odio et praesentium maxime enim quis accusamus
+				quibusdam officiis, aliquid earum saepe. Accusamus soluta ex illum
+				exercitationem, quibusdam, voluptate fugit voluptates est cupiditate
+				assumenda sint ea quisquam, qui excepturi quidem voluptas quod! Animi,
+				dolores. Similique pariatur eveniet amet. Corrupti ut ipsam labore,
+				earum unde enim voluptatem praesentium reiciendis cupiditate ad ipsa
+				culpa deserunt odit sit consectetur iste repudiandae consequuntur quis
+				blanditiis vero quia harum, voluptate odio. Iure quas provident porro
+				odio harum quo quasi, sit, qui dolore voluptate molestias quaerat
+				doloremque! Tenetur aut id quae debitis, soluta blanditiis!
+			</p>
+		</div>
+
+		<script>
+			let stars = document.getElementById('stars');
+			let moon = document.getElementById('moon');
+			let mountains_behind = document.getElementById('mountains_behind');
+			let text = document.getElementById('text');
+			let btn = document.getElementById('btn');
+			let mountains_front = document.getElementById('mountains_front');
+
+			window.addEventListener('scroll', function () {
+				let value = window.scrollY;
+				stars.style.left = value * 0.25 + 'px';
+				moon.style.top = value * 1.05 + 'px';
+				mountains_behind.style.top = value * 0.5 + 'px';
+				mountains_front.style.top = value * 0 + 'px';
+				text.style.marginRight = value * 1.5 + 'px';
+				text.style.marginTop = value * 1.25 + 'px';
+				btn.style.marginTop = value * 1.5 + 'px';
+				header.style.top = value * 0.5 + 'px';
+			});
+		</script>
+	</body>
+</html>
